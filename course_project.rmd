@@ -1,0 +1,28 @@
+---
+title: "Getting And Cleaning Data - Course Project"
+author: "Malcolm Saldanha"
+date: "Thursday, December 18, 2014"
+output: html_document
+---
+The data linked to this course project represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+
+<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones> 
+
+---
+The code can be run by invoking the function *runAnalysis*. The key assumption is the working directory for the environment has to be the directory in which the data for the test subjects reside and all read is done with this directory as the pivot.
+
+Common data across the test and training data read only once.
+First all of the data for the test subjects is read, the column headers are provided from the Activity file.
+Columns for the "Subject" and "Activity Id" are added to the test data to make each row in the test data frame describe each observation.
+The same is done for the Training Data
+The test adn training data are the appended to each, duplicate columns are subset (removed) from the data frame, column names are made compliant
+Once this has been done, the Activity Label is merged to provide meaningful decription to the code
+
+the columns of interest are the mean and standard deviations on the X, Y and Z axis of the accelerometers. The raw files contained these calculated values. These means and standard deviations are the averaged by Subject and Actvity to present the final output
+
+A code book - **features.txt** and **Readme.txt**  is attached for more information in addition to descriptive column names for the data.
+
+The output created is names **summaryofmeans.txt**
+
+This file can be easily opened in Excel for checking the contents
+
