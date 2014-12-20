@@ -9,20 +9,24 @@ The data linked to this course project represents data collected from the accele
 <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones> 
 
 ---
-The code can be run by invoking the function *runAnalysis*. The key assumption is the working directory for the environment has to be the directory in which the data for the test subjects reside and all read is done with this directory as the pivot.
+The code can be run by invoking the function *runAnalysis*.
+The **working directory** for the environment has to be the *directory in which the data for the test subjects reside* and all read is done with this directory as the pivot. This is done to retain the same directory structure when the data is unzipped
 
-Common data across the test and training data read only once.
+Common data across the test and training data is read only once.
 First all of the data for the test subjects is read, the column headers are provided from the Activity file.
 Columns for the "Subject" and "Activity Id" are added to the test data to make each row in the test data frame describe each observation.
+
 The same is done for the Training Data
-The test adn training data are the appended to each, duplicate columns are subset (removed) from the data frame, column names are made compliant
+
+The test and training data are the appended to each, duplicate columns are subset (removed) from the data frame, column names are made compliant
 Once this has been done, the Activity Label is merged to provide meaningful decription to the code
 
-the columns of interest are the mean and standard deviations on the X, Y and Z axis of the accelerometers. The raw files contained these calculated values. These means and standard deviations are the averaged by Subject and Actvity to present the final output
+The columns of interest are the mean and standard deviations on the X, Y and Z axis of the accelerometers and the gyroscope. The raw files contained these calculated values. These means and standard deviations are the averaged by Subject and Actvity to present the final output
 
 A code book - **features.txt** and **Readme.txt**  is attached for more information in addition to descriptive column names for the data.
 
-The output created is names **summaryofmeans.txt**
+The output created is named **summaryofmeans.txt**. The output file contains in addition to a row for column headings, 180 rows for the test and training subjects with six activities for each subject and 66 columns for the means.
+
 
 This file can be easily opened in Excel for checking the contents
 

@@ -70,6 +70,10 @@ runanalysis <- function() {
       #cast the melted df to create all the means, rounded the means to 6
       my_cast <- dcast(m_melt, Subject + Activity ~ variable, function(x) round(mean(x),6))
       #
+      # clean the column names, make them lower case and remove all underscores
+      colnames(my_cast) <- tolower(colnames(my_cast))
+      colnames(my_cast) <- gsub('_','', colnames(my_cast))
+      #
       #write out the the data frame to the OS for submission
       write.table(my_cast, file = 'summaryofmeans.txt', row.names = FALSE)
 
